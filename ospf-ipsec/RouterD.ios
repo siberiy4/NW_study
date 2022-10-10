@@ -1,0 +1,15 @@
+! 841M
+enable
+conf t
+
+interface GigabitEthernet 0/4
+no shutdown
+ip address 172.16.20.2 255.255.255.0
+
+interface loopback 1
+ip address 192.168.10.1 255.255.255.0
+
+router ospf 1
+network 172.16.20.2 0.0.0.0 area 0
+
+
